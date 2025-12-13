@@ -1,0 +1,22 @@
+{
+  "name": "playwrite-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pallavi-Pandey/playwrite-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pallavi-Pandey/playwrite-testing/issues"
+  },
+  "homepage": "https://github.com/Pallavi-Pandey/playwrite-testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.1"
+  }
+}

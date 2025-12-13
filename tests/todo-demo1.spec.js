@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('test to-do app @sanity', async ({ page }) => {
+  await page.goto('https://todomvc.com/examples/react/dist/');
+  await page.getByTestId('text-input').click();
+  await page.getByTestId('text-input').click();
+  await page.getByTestId('text-input').click();
+  await page.getByTestId('text-input').fill('study');
+  await page.getByTestId('text-input').press('Enter');
+  await page.getByTestId('text-input').fill('play');
+  await page.getByTestId('text-input').press('Enter');
+  await page.getByTestId('text-input').fill('market');
+  await page.getByTestId('text-input').press('ArrowLeft');
+  await page.getByTestId('text-input').press('ArrowLeft');
+  await page.getByTestId('text-input').press('ArrowLeft');
+  await page.getByTestId('text-input').press('ArrowLeft');
+  await page.getByTestId('text-input').press('ArrowLeft');
+  await page.getByTestId('text-input').fill('go market');
+  await page.getByTestId('text-input').press('Enter');
+  await page.getByTestId('text-input').fill('make reel');
+  await page.getByTestId('text-input').press('Enter');
+  await page.getByRole('listitem').filter({ hasText: 'study' }).getByTestId('todo-item-toggle').check();
+  await page.getByRole('listitem').filter({ hasText: 'go market' }).getByTestId('todo-item-toggle').check();
+  await page.getByRole('link', { name: 'Active' }).click();
+  await page.getByRole('link', { name: 'Completed' }).click();
+  await page.getByRole('link', { name: 'Active' }).click();
+  await expect(page.getByText('play')).toBeVisible();
+  await expect(page.getByTestId('todo-list')).toContainText('make reel');
+  await expect(page.getByTestId('todo-list')).toContainText('play');
+  await page.getByRole('button', { name: 'Clear completed' }).click();
+  await page.getByRole('link', { name: 'All' }).click();
+}); 
