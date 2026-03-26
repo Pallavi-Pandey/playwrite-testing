@@ -1,4 +1,4 @@
-# playwrite-testing
+# Playwright E2e Testing
 
 ## Commands Used
 
